@@ -1,18 +1,20 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-
-String getFullName(String firstName, String lastName){
-  return "$firstName $lastName";
-  }
-
-int getAge(int age){
-  return age;
-}
 
 void main() {
   runApp(const MyApp());
 }
+
+void test(){ 
+  const name = 'Foo';
+
+  if (name == 'Foo'){
+    print('Name is Foo!');
+  }
+  else{
+    print("Name is not foo!");
+  }
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,8 +22,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    print(getFullName('Foo', 'Bar'));
-    print(getAge(27));
+    test();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
