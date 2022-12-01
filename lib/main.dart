@@ -5,14 +5,10 @@ void main() {
 }
 
 void test(){ 
-  const name = 'Foo';
-
-  if (name == 'Foo'){
-    print('Name is Foo!');
-  }
-  else{
-    print("Name is not foo!");
-  }
+  var age = 20;
+  final ageminusone = --age;
+  print(ageminusone);
+  print(age);
 }
 
 
