@@ -4,35 +4,32 @@ void main() {
   runApp(const MyApp());
 }
 
-void test(String? firstName, String? secondName, String? thirdName){ 
-String? name = firstName;
-name ??=secondName;
-name ??=thirdName;
+class Person{
+void run(){
+  print("I am Running ");
 
-print(name);
+}
 
+void breathe() {
+  print("I am Breathing ");
+}
 
+}
 
-  // var person = {
-  //   'Name': 'John',
-  //   'age': 20,
+class Man extends Person{
+void sing() {
+  print("I am Singing Rhumba ");
+}
+}
 
-// String? name = null;
+void test() {
+final Kamau = Man();
 
-//   print(name);
-//   name = "John";
-//   print(name);
-//   name = null;
-//   print(name);
+Kamau.breathe();
+Kamau.run();
+Kamau.sing();
+}
 
-
-// List<String?>? names = ['john', 'John', 'John'];
-// names = null;
-  }
-
-  // print(person);
-//   person['lastName'] = 'Kamau';
-//   print(person);
 
 
 class MyApp extends StatelessWidget {
@@ -41,7 +38,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    test('Kamau',null,'Bar');
+    test();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
