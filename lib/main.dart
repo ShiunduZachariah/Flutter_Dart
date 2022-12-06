@@ -4,37 +4,37 @@ void main() {
   runApp(const MyApp());
 }
 
-class Person{
-void run(){
-  print("I am Running ");
+class Cat {
+  String name;
 
+  Cat(this.name);
 }
 
-void breathe() {
-  print("I am Breathing ");
+extension Run on Cat {
+  void run() {
+    print('Cat $name can Run');
+  }
 }
 
+Stream<String> getName() {
+  return Stream.periodic(const Duration(seconds: 1), (value) {
+    return "Foo";
+  });
 }
 
-class Man extends Person{
-void sing() {
-  print("I am Singing Rhumba ");
+void test() async {
+  await for (final value in getName()) {
+    print(value);
+  }
+  print("Stream finished working.");
+  // final meow = Cat("Fluffers");
+  // print(meow.name);
+  // meow.run();
 }
-}
-
-void test() {
-final Kamau = Man();
-
-Kamau.breathe();
-Kamau.run();
-Kamau.sing();
-}
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
